@@ -45,7 +45,7 @@ async function onPost(req, res) {
 app.post('/api', jsonParser, onPost);
 
 
-/* returns test message to the client via GET /api  */
+/* returns help message to the client via GET on all paths  */
 async function onGet(req, res) {
 
     const help = "do POST request to route /api with JSON object {'sentences':[]} holding an array of texts";
@@ -55,7 +55,7 @@ async function onGet(req, res) {
 
 }
 
-app.get('/api', onGet);
+app.get('/', onGet);
 
 function dot(a, b){
   var hasOwnProperty = Object.prototype.hasOwnProperty;
