@@ -1,5 +1,5 @@
 # similary score webservice wrapper
-Similarity score services for Stanford Deliberative Democracy platform 
+Similarity score services based on Google Universal Sentence Encoder 
 
 *Files*:  
 
