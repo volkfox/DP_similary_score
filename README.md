@@ -1,4 +1,4 @@
-# DP_similary_score
+# DP similary score
 Similarity score services for Stanford Deliberative Democracy platform 
 
 *Files*:  
