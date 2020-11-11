@@ -10,3 +10,6 @@ Similarity score services for Stanford Deliberative Democracy platform
 **NodeJS** - Javascript HTTP server responding with similarity matrix based on the POST request with data (array of sentences or paragraphs)  
 
 **PythonHTTP** - Python HTTP server responding with similarity matrix based on the POST request with data (array of sentences or paragraphs)
+
+Testing servers with POST request:
+$ curl -H "Content-Type: application/json" -X POST -d '{"sentences":["The quick brown fox", "Fox is quick"]}' http://127.0.0.1:8000/api
