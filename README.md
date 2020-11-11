@@ -1,4 +1,4 @@
-# DP similary score
+# similary score webservice wrapper
 Similarity score services for Stanford Deliberative Democracy platform 
 
 *Files*:  
