@@ -1,4 +1,4 @@
-# similary score webservice wrapper
+# similarity score webservice wrapper
 Similarity score services based on Google Universal Sentence Encoder 
 
 *Files*:  
