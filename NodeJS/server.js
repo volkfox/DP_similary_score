@@ -35,11 +35,16 @@ async function onPost(req, res) {
     //const messageKeys = Object.keys(messageBody);
     //console.log("POST Keys: " + messageKeys);
 
-    const sentences = messageBody["sentences"]
-    const embeddings = await embed(sentences);
-    const array = await embeddings.arraySync();
-    const cosine_score = cosine_similarity_matrix(array);
-    res.json(cosine_score);
+    if ('sentences' in messageBody && Array.isArray(messageBody["sentences"])) {
+    	const sentences = messageBody["sentences"]
+    	const embeddings = await embed(sentences);
+    	const array = await embeddings.arraySync();
+    	const cosine_score = cosine_similarity_matrix(array);
+    	res.json(cosine_score);
+    } else {
+        // throw new Error('JSON object misses "sentences" key')
+    	res.json('JSON object misses "sentences" key array');
+    }
 }
 
 app.post('/api', jsonParser, onPost);
