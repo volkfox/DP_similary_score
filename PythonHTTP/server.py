@@ -23,6 +23,9 @@ class S(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
+    def do_HEAD(self):
+        self.do_GET()
+
     def do_GET(self):
 
         help = "do POST request to route /api with JSON object {'sentences':[]} holding an array of texts"
