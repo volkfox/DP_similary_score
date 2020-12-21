@@ -72,7 +72,6 @@ class S(BaseHTTPRequestHandler):
         else: 
            message = error        
         
-        self._set_response()
         self.wfile.write(message.encode('utf-8'))
 
         #logging.info("POST request,\nPath: %s\nHeaders:\n%s\n\nBody:\n%s\n", str(self.path), str(self.headers), post_data.decode('utf-8'))

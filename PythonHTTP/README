@@ -1,6 +1,12 @@
 How to run: 
 
+> screen
 > conda activate tensorflow2_p36
 > server python.py
+
+Ctrl-A-d
+
+after ~15 seconds it should work:
+
 > curl http://127.0.0.1:8000/api
 
