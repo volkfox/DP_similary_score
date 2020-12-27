@@ -18,7 +18,7 @@ import numpy as np
 embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
 
 class S(BaseHTTPRequestHandler):
-
+    timeout = 15
     def _send_cors_headers(self):
       """ Sets headers required for CORS """
       self.send_header("Access-Control-Allow-Origin", "*")
@@ -82,6 +82,7 @@ def run(server_class=HTTPServer, handler_class=S, port=8000):
     httpd = server_class(server_address, handler_class)
     httpd.timeout = 10
     logging.info('Starting httpd...\n')
+    print(f"Ready to run")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
