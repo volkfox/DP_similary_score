@@ -11,14 +11,15 @@ from json import dumps
 import logging
 import json
 
-import tensorflow as tf
 import tensorflow_hub as hub
 import numpy as np
+import tensorflow_text
 
-embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+
+embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder-multilingual/3")
 
 class S(BaseHTTPRequestHandler):
-
+    timeout = 15
     def _send_cors_headers(self):
       """ Sets headers required for CORS """
       self.send_header("Access-Control-Allow-Origin", "*")
@@ -72,7 +73,6 @@ class S(BaseHTTPRequestHandler):
         else: 
            message = error        
         
-        #self._set_response()
         self.wfile.write(message.encode('utf-8'))
 
         #logging.info("POST request,\nPath: %s\nHeaders:\n%s\n\nBody:\n%s\n", str(self.path), str(self.headers), post_data.decode('utf-8'))
@@ -81,7 +81,9 @@ def run(server_class=HTTPServer, handler_class=S, port=8000):
     logging.basicConfig(level=logging.INFO)
     server_address = ('', port)
     httpd = server_class(server_address, handler_class)
+    httpd.timeout = 10
     logging.info('Starting httpd...\n')
+    print(f"Ready to run")
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
