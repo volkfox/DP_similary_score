@@ -1,0 +1,4 @@
+# Deep Learning AMI (Amazon Linux 2) Version 38.0
+conda activate tensorflow2_p36
+pip install --no-cache-dir tensorflow_text
+pip install tensorflow_hub
