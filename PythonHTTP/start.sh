@@ -1,2 +1,6 @@
+# conda deactivate
+# screen -R DP_server
+conda activate tensorflow2_p36
 python server.py&
-curl http://127.0.0.1:8000/api
+
+# Ctrl-A D
