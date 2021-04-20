@@ -62,7 +62,7 @@ class S(BaseHTTPRequestHandler):
         objectDict = json.loads(post_data.decode('utf-8'))
        
         message = {}
-        print(f"received {objectDict}") 
+        #print(f"received {objectDict}") 
         if ("sentences" in objectDict) and isinstance(objectDict["sentences"], list):
            embeddings = embed(objectDict["sentences"])
            corr = np.inner(embeddings, embeddings)
